@@ -1,0 +1,52 @@
+<style>
+body {margin:0;font-family:Arial}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: blue;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.midnav {
+  overflow: hidden;
+  background-color: #222;
+}
+
+.midnav a {
+  float: left;
+  color: #fff;
+  text-align: center;
+  padding: 14px 32px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.midnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.midnav a.active {
+  background-color: red;
+  color: blue;
+}
+
+</style>
