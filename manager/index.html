@@ -14,7 +14,7 @@
     </style>
   </head>
 <body>
-
+<!--temp nav bar-->
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
@@ -24,16 +24,64 @@
 
 <div style="padding-left:16px">
   <h2>Hello [insert name here], </h2>
-  
+ <!-- 
 <div class="midnav">
   <a class="notactive" href="#view-schedual">View</a>
   <a href="#edit">Edit</a>
   <a href="#contacts">Contacts</a>
   <a href="#help">Help</a>
 </div>
-
+-->
 
 </div>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openAction(event, 'View')">View</button>
+  <button class="tablinks" onclick="openAction(event, 'Edit')">Edit</button>
+  <button class="tablinks" onclick="openAction(event, 'Contacts')">Contacts</button>
+</div>
+
+<div id="View" class="tabcontent">
+  <h3>View</h3>
+  <p>View this allows the user to view the calendar as the other users see it with hidden.</p>
+</div>
+
+<div id="Edit" class="tabcontent">
+  <h3>Edit</h3>
+  <p>This feature allows the user to edit a mass calendar with selected users.</p> 
+</div>
+
+<div id="Contacts" class="tabcontent">
+  <h3>Contacts</h3>
+  <p>Contacts are listed here.</p>
+</div>
+
+<div id ="BotNavBar" class="botnav">
+   <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<!-- java script for changing info in the tabs-->
+<script>
+function openAction(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
 
 </body>
 
