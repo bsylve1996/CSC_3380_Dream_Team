@@ -1,0 +1,43 @@
+body{
+background:#000000	
+	
+}
+
+
+
+#calendar-container{
+    padding: 10px;
+    width: 30%;
+    height: 35%px;
+    text-align: center;
+    border: 2px solid #800080;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    background-image: linear-gradient(#ffdb58 , #800080);
+	margin:auto;
+	color:#8B0000;
+}
+	
+}
+
+#calendar-container>div{
+    padding: 0;
+    margin-bottom: 10px;
+	
+	
+}
+
+#calendar-month-year{
+    margin: 10px;
+	color:#8B0000;
+}
+
+#calendar-dates>table>tr>td{
+    padding: 20px;
+	color:#8B0000;
+  
+}
+#calendar-dates>table>tr>td:hover { 
+    background-color: black;
+}
