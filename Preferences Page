@@ -1,0 +1,6 @@
+[Preferences Page]
+/This page will allow the user to edit their settings and preferences in their calendar when logged in
+Preferences so far will include the ability to change 
+1. notification settings -time of notification, type of notification 
+2. aesthetic preferences - theme preferences that allow the user to change the color scheme of the given calendar
+3. Date and time - allows user to change the time zone of the calendar
