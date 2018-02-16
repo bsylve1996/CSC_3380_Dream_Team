@@ -23,7 +23,8 @@
 </div>
 
 <div style="padding-left:16px">
-  <h2>Hello [insert name here], </h2>
+ 
+<h2><label id="lblGreetings"></label> [insert name here], </h2>
  <!-- 
 <div class="midnav">
   <a class="notactive" href="#view-schedual">View</a>
@@ -64,8 +65,10 @@
   <a href="#about">About</a>
 </div>
 
-<!-- java script for changing info in the tabs-->
+<!-- javascript -->
+
 <script>
+  //for changing info in the tabs
 function openAction(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -79,6 +82,24 @@ function openAction(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+//java script for changing greeting
+var today = new Date();
+var hourNow = today.getHours();
+var greeting;
+ if (hourNow>18){
+  greeting = 'Good Evening';
+}
+else if (hourNow > 12){
+  greeting = 'Good Afternoon';
+}
+else if (hourNow > 0){
+  greeting = 'Good Morning';
+}
+else{
+  greeting = 'Welcome';
+}
+document.getElementById('lblGreetings').innerHTML = greeting ;
+
 </script>
 
 
