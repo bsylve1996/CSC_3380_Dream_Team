@@ -50,12 +50,32 @@
 
 <div id="Edit" class="tabcontent">
   <h3>Edit</h3>
+<form action="/action_page.php">
+  Event:<br>
+  <input type="text" name="eventname" value="">
+  <br>
+    <input type="submit" value="Submit">
+</form> 
+
   <p>This feature allows the user to edit a mass calendar with selected users.</p> 
+  <p>Users:</p>
+  <form action="/action_page.php" method="get">
+  <input type="checkbox" name="person" value="Sally"> Sally Perkison<br>
+  <input type="checkbox" name="person" value="Mike" checked="checked"> Mike Bonobo<br>
+  <input type="submit" value="Submit">
+  </form>
+
+
+
+
 </div>
 
 <div id="Contacts" class="tabcontent">
   <h3>Contacts</h3>
   <p>Contacts are listed here.</p>
+     <div id ="user-icon"> 
+     </div>
+     <p> User Name </p>
 </div>
 
 <div id ="BotNavBar" class="botnav">
