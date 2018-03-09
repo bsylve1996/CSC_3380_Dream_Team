@@ -1,2 +1,2 @@
 # CSC_3380_Dream_Team
-![Image of Yaktocat](CSC_3380_Dream_Team/flowchart.png)
+![Flowchart Of Project](https://github.com/bsylve1996/CSC_3380_Dream_Team/blob/master/flowchart.png)
