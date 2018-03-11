@@ -18,9 +18,7 @@
 		function changeTimeZone(myForm){
 			var selindex = myForm.optionList.selectedIndex;
 			var d = changeTheTime(selindex);
-			var e = new Date();
-			document.getElementById("output").innerHTML = e;
-			document.getElementById("output").innerHTML = d;
+			document.getElementById("output").innerHTML = "New time is: " + d + "\nselectedIndex is: " + selindex;
 			//alert(selindex);
 			//alert(hello(selindex));
 			//alert(selindex);
@@ -34,6 +32,17 @@
 	</script>
 	<script type="text/javascript" src="dropdown.js"></script>
 	<p id="output"></p>
+	<p id="timeNow"></p>
+	<script type="text/javascript">
+		var dt = new Date();
+		function updateTimeHTML() {
+			//document.getElementById("output").innerHTML = dt;
+			//dt.setHours(dt.getHours() + 1);
+			document.getElementById("timeNow").innerHTML = updateTime();
+		}
+		setInterval(updateTimeHTML, 1*1*1000 );
+	</script>
+
 </body>
 
 </html>
