@@ -1,4 +1,4 @@
-<script>
+
   //for changing info in the tabs
 function openAction(evt, cityName) {
     var i, tabcontent, tablinks;
@@ -29,6 +29,5 @@ else if (hourNow > 0){
 else{
   greeting = 'Welcome';
 }
-document.getElementById('lblGreetings').innerHTML = greeting ;
 
-</script>
+

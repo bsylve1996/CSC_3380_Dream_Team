@@ -1,4 +1,4 @@
-<script>
+
   //for changing info in the tabs
 function openAction(evt, cityName) {
     var i, tabcontent, tablinks;
@@ -31,4 +31,3 @@ else{
 }
 document.getElementById('lblGreetings').innerHTML = greeting ;
 
-</script>
