@@ -19,6 +19,7 @@ background:#000000
 	color:#8B0000;
 }
 	
+<<<<<<< HEAD
 #sidepane {
     height: 55%;
     width: 160px;
@@ -43,6 +44,10 @@ background:#000000
 }
 
 
+=======
+}
+
+>>>>>>> calendar
 #calendar-container>div{
     padding: 0;
     margin-bottom: 10px;
@@ -63,6 +68,7 @@ background:#000000
 #calendar-dates>table>tr>td:hover { 
     background-color: black;
 }
+<<<<<<< HEAD
 .bar{
 	}
 	
@@ -80,3 +86,5 @@ background:#000000
 	
 	
 
+=======
+>>>>>>> calendar
