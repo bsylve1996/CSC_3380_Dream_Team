@@ -8,6 +8,7 @@
     <title>Managment Editor</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="js/jscript.js"></script>
+     <script type="text/javascript" src="js/jsEvent.js"></script>
     <meta http-equiv="Content-Language" content="en-us" />
 
     <style type="text/css" media="all">
@@ -50,12 +51,8 @@
 
 <div id="Edit" class="tabcontent">
   <h3>Edit</h3>
-<form action="/action_page.php">
-  Event:<br>
-  <input type="text" name="eventname" value="">
-  <br>
-    <input type="submit" value="Submit">
-</form> 
+  <button type="button" onclick=" prompt('hello world!')">Click Me!</button>
+
 
   <p>This feature allows the user to edit a mass calendar with selected users.</p> 
   <p>Users:</p>
@@ -90,6 +87,7 @@
 </body>
 <script>
   document.getElementById('lblGreetings').innerHTML = greeting ;
+
 </script>
 
 </html>
