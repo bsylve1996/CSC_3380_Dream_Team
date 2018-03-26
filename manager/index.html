@@ -42,6 +42,7 @@
   <button class="tablinks" onclick="openAction(event, 'View')">View</button>
   <button class="tablinks" onclick="openAction(event, 'Edit')">Edit</button>
   <button class="tablinks" onclick="openAction(event, 'Contacts')">Contacts</button>
+  <button class="tablinks" onclick="openAction(event, 'Event')">Event</button>
 </div>
 
 <div id="View" class="tabcontent">
@@ -75,6 +76,78 @@
      <p> User Name </p>
 </div>
 
+<div id="Event" class="tabcontent">
+  <h3>Create an Event</h3>
+  <p>Allows the user to create an event</p>
+  <!--html to create a form in php-->
+
+<?php
+// define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<h2>PHP Form Validation Example</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  Name: <input type="text" name="name">
+  <br><br>
+  E-mail: <input type="text" name="email">
+  <br><br>
+  Website: <input type="text" name="website">
+  <br><br>
+  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+  <br><br>
+  Gender:
+  <input type="radio" name="gender" value="female">Female
+  <input type="radio" name="gender" value="male">Male
+  <br><br>
+  <input type="submit" name="submit" value="Submit">  
+</form>
+
+<?php include 'echo.php'; ?><?php
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $website;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
+?>
+
+
+<!--
+ <p>Event:</p>
+
+
+  <p>Date</p>
+<input type="checkbox" name="dayOfTheWeek" value="Sunday"> Sunday<br>
+<input type="checkbox" name="dayOfTheWeek" value="Monday"> Monday<br>
+<input type="checkbox" name="dayOfTheWeek" value="Tuesday"> Tuesday<br>
+<input type="checkbox" name="dayOfTheWeek" value="Wednesday"> Wednesday<br>
+<input type="checkbox" name="dayOfTheWeek" value="Thursday"> Thursday<br>
+<input type="checkbox" name="dayOfTheWeek" value="Friday"> Friday<br>
+<input type="checkbox" name="dayOfTheWeek" value="Saturday"> Saturday<br>
+ <p>Time</p>
+-->
+</div>
+
 <div id ="BotNavBar" class="botnav">
    <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
@@ -87,7 +160,6 @@
 </body>
 <script>
   document.getElementById('lblGreetings').innerHTML = greeting ;
-
 </script>
 
 </html>

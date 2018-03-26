@@ -30,4 +30,10 @@ else{
   greeting = 'Welcome';
 }
 
+function eventPrompt(){
+
+var eventName, time, date, description;
+
+
+}
 
