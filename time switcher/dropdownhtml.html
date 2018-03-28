@@ -1,48 +1,32 @@
 <html>
-
-<head>
-
-</head>
-
-<body>
-	<form name="TimeZone">
-		<p>Want to change your time zone?
-		<select id="optionList" onchange="changeTimeZone(this.form)">
-			<option value=0>Time Zones</option>
-			<option value=1 name="Central">Central</option>
-			<option value=2 nane="Mountain">Mountain</option>
-			<option value=3 name="Zulu">Zulu</option>
-		</select>
-	</form>
-	<script type="text/javascript">
-		function changeTimeZone(myForm){
-			var selindex = myForm.optionList.selectedIndex;
-			var d = changeTheTime(selindex);
-			document.getElementById("output").innerHTML = "New time is: " + d + "\nselectedIndex is: " + selindex;
-			//alert(selindex);
-			//alert(hello(selindex));
-			//alert(selindex);
-			//var selName = myForm.optionList.options[selindex].name;
-			//alert(selName);
-			//var selName = myForm.optionList.options[selindex].text;
-			//alert(selName);
-			//var el = document.getElementsByTagName('select');
-			//alert(el[0].value);
-		}
-	</script>
-	<script type="text/javascript" src="dropdown.js"></script>
-	<p id="output"></p>
-	<p id="timeNow"></p>
-	<script type="text/javascript">
-		var dt = new Date();
-		function updateTimeHTML() {
-			//document.getElementById("output").innerHTML = dt;
-			//dt.setHours(dt.getHours() + 1);
-			document.getElementById("timeNow").innerHTML = updateTime();
-		}
-		setInterval(updateTimeHTML, 1*1*1000 );
-	</script>
-
-</body>
-
+	<head>
+	</head>
+	<body>
+		<form name="TimeZone">
+			<p>Want to change your time zone?
+			<select id="optionList" onchange="changeTimeZone(this.form)">
+				<option value=0>Time Zones</option>
+				<option value=1 name="Hawaian">Hawaian</option>
+				<option value=2 nane="Alaska">Alaska</option>
+				<option value=3 name="Pacific">Pacific</option>
+				<option value=4 name="Mountain">Mountain</option>
+				<option value=5 name="Central">Central</option>
+				<option value=6 name="Eastern">Eastern</option>
+			</select>
+		</form>
+		<script type="text/javascript">
+			function changeTimeZone(myForm){
+				var selindex = myForm.optionList.selectedIndex;
+				var d = changeTheTime(selindex);
+			}
+		</script>
+		<script type="text/javascript" src="dropdown.js"></script>
+		<p id="output"></p>
+		<script type="text/javascript">
+			function updateTimeHTML() {
+				document.getElementById("timeNow").innerHTML = getTime();
+			}
+			setInterval(updateTimeHTML, 1*1*1000 );
+		</script>
+	</body>
 </html>
