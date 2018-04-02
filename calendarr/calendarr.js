@@ -7,7 +7,11 @@ window.onload = function(){
     //February  1 2018
     var tmp = new Date(first_date).toDateString();
     //Tue  Feb 1 2018 ...
-    var first_day = tmp.substring(0, 3);    //Tue
+
+ 
+
+    var first_day = tmp.substring(0, 3);    //Wed
+
     var day_name = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     var day_no = day_name.indexOf(first_day);   //1
     var days = new Date(year, month+1, 0).getDate();    //28

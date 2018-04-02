@@ -19,7 +19,32 @@ background:#000000
 	color:#8B0000;
 }
 	
+
+
+
+#sidepane {
+    height: 55%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 55;
+    left: 0;
+    background-color:#800080;
+    overflow-x: hidden;
+    padding-top: 20px;
+	border: 2px solid #FF00FF;
+	
 }
+#b1{
+	    background-color:#ffdb58;	
+		border: none;
+		 align:right;
+}
+#b2{
+	    background-color:#ffdb58;	
+		border: none;
+}
+
 
 #calendar-container>div{
     padding: 0;
@@ -41,3 +66,22 @@ background:#000000
 #calendar-dates>table>tr>td:hover { 
     background-color: black;
 }
+
+.bar{
+	}
+	
+#bottombar{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 40%
+	margin-left: auto;
+    margin-right: auto;
+}
+	
+	
+	
+	
+	
+
+
