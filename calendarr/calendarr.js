@@ -1,3 +1,12 @@
+document.getElementById('theme_btn').addEventListener('click', function () {
+    let darkThemeEnabled = document.body.classList.toggle('light_theme');
+    localStorage.setItem('light_theme-enabled', darkThemeEnabled);
+});
+
+if (JSON.parse(localStorage.getItem('light_theme-enabled'))) {
+    document.body.classList.add('light_theme');
+}
+
 window.onload = function(){
     var d = new Date();
     var month_name = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -7,11 +16,7 @@ window.onload = function(){
     //February  1 2018
     var tmp = new Date(first_date).toDateString();
     //Tue  Feb 1 2018 ...
-<<<<<<< HEAD
     var first_day = tmp.substring(0, 3);    //Wed
-=======
-    var first_day = tmp.substring(0, 3);    //Tue
->>>>>>> calendar
     var day_name = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     var day_no = day_name.indexOf(first_day);   //1
     var days = new Date(year, month+1, 0).getDate();    //28
