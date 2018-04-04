@@ -432,3 +432,25 @@ function changeTheTime(value){
 	}
 	console.log("You Fucked up and Your TimeZone doesn't exist")
 }
+
+setInterval(function(){
+  var date = new Date();
+  updateTime(date);
+  updateClock(date);
+}, 1000);
+
+function updateClock(date){
+  var secHand = document.getElementById("sec-hand").style;
+  var minHand = document.getElementById("min-hand").style;
+  var hrHand = document.getElementById("hr-hand").style;
+  
+  secHand.transform = "rotate(" + date.getSeconds() * 6 + "deg)";
+  minHand.transform = "rotate(" + currentTime.minutes * 6 + "deg)";
+  hrHand.transform = "rotate(" + (currentTime.hour * 30 + currentTime.minutes * 0.5) + "deg)";
+}
+
+function updateTime(date){
+  var timeDiv = document.getElementById("time");
+  var time = "Time for Reference --- " + currentTime.hour + " : " + currentTime.minutes + " : " + date.getSeconds();
+  timeDiv.innerHTML = time;
+}
