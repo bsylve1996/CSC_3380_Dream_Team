@@ -435,7 +435,6 @@ function changeTheTime(value){
 
 setInterval(function(){
   var date = new Date();
-  updateTime(date);
   updateClock(date);
 }, 1000);
 
@@ -447,10 +446,4 @@ function updateClock(date){
   secHand.transform = "rotate(" + date.getSeconds() * 6 + "deg)";
   minHand.transform = "rotate(" + currentTime.minutes * 6 + "deg)";
   hrHand.transform = "rotate(" + (currentTime.hour * 30 + currentTime.minutes * 0.5) + "deg)";
-}
-
-function updateTime(date){
-  var timeDiv = document.getElementById("time");
-  var time = "Time for Reference --- " + currentTime.hour + " : " + currentTime.minutes + " : " + date.getSeconds();
-  timeDiv.innerHTML = time;
 }
