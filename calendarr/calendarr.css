@@ -1,8 +1,34 @@
+
+
+
 body{
-background:#000000	
+background:#000000;
+ transition: all 0.15s ease-out;	
+
 	
 }
+body.light_theme {
+  background-color: #e5e5e5;
+ 
+}
 
+#theme_btn{
+  position:absolute;
+   top:10;
+   right:10;
+   width: 75px;
+   font:inherit;
+   background-color: #C0C0C0;
+   color: #000;
+   cursor: pointer;
+    transition: all 0.15s ease-out;
+}
+#theme_btn:hover {
+  text-decoration: underline;
+}
+.light_theme #change-theme-btn {
+  color: #333;
+}
 
 
 #calendar-container{
@@ -10,13 +36,25 @@ background:#000000
     width: 30%;
     height: 35%px;
     text-align: center;
-    border: 2px solid #800080;
     border-radius: 10px;
     font-size: 16px;
     font-family: Arial;
-    background-image: linear-gradient(#ffdb58 , #800080);
+    background-color:#151B54; /*image: linear-gradient(#151B54 , #800080);*/
 	margin:auto;
-	color:#8B0000;
+	color:#0000;
+}
+.light_theme #calendar-container  {
+  padding: 10px;
+    width: 30%;
+    height: 35%px;
+    text-align: center;
+    border: 2px solid #ADD8E6;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    background-image: linear-gradient(#ADD8E6 , #3bb9ff);
+	margin:auto;
+	color:#0000;
 }
 	
 #sidepane {
@@ -25,23 +63,58 @@ background:#000000
     position: fixed;
     z-index: 1;
     top: 55;
-    left: 0;
-    background-color:#800080;
+    left: 20;
+	background-color:#800080;
     overflow-x: hidden;
     padding-top: 20px;
 	border: 2px solid #FF00FF;
+	text-align :center;
+	font-weight:bold;
+	font-size: 25;
 	
+	
+}
+.light_theme #sidepane {
+    height: 55%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 55;
+    left: 20;
+    background-color:#FFC0CB;
+    overflow-x: hidden;
+    padding-top: 20px;
+	border: 2px solid #FF69B4;
+	text-align :center;
+	font-weight:bold;
+	font-size: 25;
+
 }
 #b1{
 	    background-color:#ffdb58;	
 		border: none;
-		 align:right;
+		 left:20;
+		  cursor: pointer;
 }
+
+
 #b2{
 	    background-color:#ffdb58;	
 		border: none;
+		 cursor: pointer;
 }
 
+.light_theme #b1{
+background-color:#E0B0FF;	
+border: none;
+left:20;
+ cursor: pointer;
+}
+.light_theme #b2{
+background-color:#E0B0FF;	
+border: none;
+ cursor: pointer;
+}
 
 #calendar-container>div{
     padding: 0;
@@ -50,29 +123,64 @@ background:#000000
 	
 }
 
+
 #calendar-month-year{
     margin: 10px;
-	color:#8B0000;
+	color:#1F45FC;
+}
+.light_theme #calendar-month-year{
+	margin: 10px;
+	color:#000000;	
 }
 
 #calendar-dates>table>tr>td{
     padding: 20px;
-	color:#8B0000;
+	color:#1F45FC;
   
 }
+.light_theme #calendar-dates>table>tr>td{
+    padding: 20px;
+	color:#000000;
+  
+}
+
+
 #calendar-dates>table>tr>td:hover { 
     background-color: black;
 }
-.bar{
+
+.light_theme #calendar-dates>table>tr>td:hover { 
+    background-color: white;
+}
+#bar{
+height:30;
+width:100;
+background:#8B0000;
+margin:none;
+color: #ffdb58;	
+ cursor: pointer;
 	}
+
+.light_theme #bar{
+height:30;
+width:100;
+background:#E0B0FF;
+margin:none;
+color: #ffdb58;	
+ cursor: pointer;
+	}
+	
 	
 #bottombar{
     overflow: hidden;
     position: fixed;
-    bottom: 0;
-    width: 40%
+	left:480;
+    bottom: 150;
+    width: 40%;
 	margin-left: auto;
     margin-right: auto;
+	color: #ffdb58;	
+	 cursor: pointer;
 }
 	
 	
