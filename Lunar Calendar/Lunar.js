@@ -1,9 +1,4 @@
-/**
- * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.<p>
- * Permission to use, copy, modify, and redistribute this software and its
- * documentation for personal, non-commercial use is hereby granted provided that
- * this copyright notice appears in all copies.
- */
+
 
 var ABOUT = "\u00C2m l\u1ECBch Vi\u1EC7t Nam - Version 0.5"+"\n\u00A9 2004 H\u1ED3 Ng\u1ECDc \u0110\u1EE9c [http://come.to/duc]";
 var TK19 = new Array(
@@ -562,5 +557,11 @@ function showVietCal() {
 	window.status = getCurrentTime() + " -+- " + getTodayString();
 	window.window.setTimeout("showVietCal()",5000);
 }
+/**
+ * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.<p>
+ * Permission to use, copy, modify, and redistribute this software and its
+ * documentation for personal, non-commercial use is hereby granted provided that
+ * this copyright notice appears in all copies.
+ */
 
 //showVietCal();
