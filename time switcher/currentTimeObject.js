@@ -109,11 +109,18 @@ var currentTime = {
 			currentTime.choice2 = true;
 		}
 		
-		if (currentTime.hour >= 12){
+		if (currentTime.hour > 12){
 			if (currentTime.minutes < 10)
 				return(currentTime.dayOfTheWeekString + ", " + currentTime.monthString + " " + currentTime.day + ", " + currentTime.year + " " + (currentTime.hour-12) + ":0" + currentTime.minutes + " PM");
 			else
 				return(currentTime.dayOfTheWeekString + ", " + currentTime.monthString + " " + currentTime.day + ", " + currentTime.year + " " + (currentTime.hour-12) + ":" + currentTime.minutes + " PM");
+		
+		}
+		else if if (currentTime.hour == 12){
+			if (currentTime.minutes < 10)
+				return(currentTime.dayOfTheWeekString + ", " + currentTime.monthString + " " + currentTime.day + ", " + currentTime.year + " " + currentTime.hour + ":0" + currentTime.minutes + " PM");
+			else
+				return(currentTime.dayOfTheWeekString + ", " + currentTime.monthString + " " + currentTime.day + ", " + currentTime.year + " " + currentTime.hour + ":" + currentTime.minutes + " PM");
 		
 		}
 		else if (currentTime.hour == 0){
