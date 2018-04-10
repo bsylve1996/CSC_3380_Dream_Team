@@ -109,7 +109,7 @@ var currentTime = {
 			currentTime.choice2 = true;
 		}
 		
-		if (currentTime.hour > 12){
+		if (currentTime.hour >= 12){
 			if (currentTime.minutes < 10)
 				return(currentTime.dayOfTheWeekString + ", " + currentTime.monthString + " " + currentTime.day + ", " + currentTime.year + " " + (currentTime.hour-12) + ":0" + currentTime.minutes + " PM");
 			else
