@@ -116,7 +116,7 @@ var currentTime = {
 				return(currentTime.dayOfTheWeekString + ", " + currentTime.monthString + " " + currentTime.day + ", " + currentTime.year + " " + (currentTime.hour-12) + ":" + currentTime.minutes + " PM");
 		
 		}
-		else if if (currentTime.hour == 12){
+		else if (currentTime.hour == 12){
 			if (currentTime.minutes < 10)
 				return(currentTime.dayOfTheWeekString + ", " + currentTime.monthString + " " + currentTime.day + ", " + currentTime.year + " " + currentTime.hour + ":0" + currentTime.minutes + " PM");
 			else

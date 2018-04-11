@@ -14,13 +14,13 @@
 				<option value=6 name="Eastern">Eastern</option>
 			</select>
 		</form>
+		<script type="text/javascript" src="currentTimeObject.js"></script>
 		<script type="text/javascript">
 			function changeTimeZone(myForm){
 				var selindex = myForm.optionList.selectedIndex;
 				var d = changeTheTime(selindex);
 			}
 		</script>
-		<script type="text/javascript" src="currentTimeObject.js"></script>
 		<p id="timeNow"></p>
 		<script type="text/javascript">
 			function updateTimeHTML() {
