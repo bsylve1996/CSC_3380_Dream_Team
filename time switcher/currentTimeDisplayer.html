@@ -1,0 +1,51 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<form name="TimeZone">
+			<p>Want to change your time zone?
+			<select id="optionList" onchange="changeTimeZone(this.form)">
+				<option value=0>Time Zones</option>
+				<option value=1 name="Hawaian">Hawaian</option>
+				<option value=2 nane="Alaska">Alaska</option>
+				<option value=3 name="Pacific">Pacific</option>
+				<option value=4 name="Mountain">Mountain</option>
+				<option value=5 name="Central">Central</option>
+				<option value=6 name="Eastern">Eastern</option>
+			</select>
+		</form>
+		<script type="text/javascript">
+			function changeTimeZone(myForm){
+				var selindex = myForm.optionList.selectedIndex;
+				var d = changeTheTime(selindex);
+			}
+		</script>
+		<script type="text/javascript" src="currentTimeObject.js"></script>
+		<p id="timeNow"></p>
+		<script type="text/javascript">
+			function updateTimeHTML() {
+				document.getElementById("timeNow").innerHTML = getTime();
+			}
+			setInterval(updateTimeHTML, 1*1*1000 );//minutes*seconds*milliseconds
+		</script>
+		<link type="text/css" rel="stylesheet" href="clock.css"/>
+		<div id="time"></div><br>
+		<div id="clock">
+		  <div class="num num1"><div>1</div></div>
+		  <div class="num num2"><div>2</div></div>
+		  <div class="num num3"><div>3</div></div>
+		  <div class="num num4"><div>4</div></div>
+		  <div class="num num5"><div>5</div></div>
+		  <div class="num num6"><div>6</div></div>
+		  <div class="num num7"><div>7</div></div>
+		  <div class="num num8"><div>8</div></div>
+		  <div class="num num9"><div>9</div></div>
+		  <div class="num num10"><div>10</div></div>
+		  <div class="num num11"><div>11</div></div>
+		  <div class="num num12"><div>12</div></div>
+		  <div id="hr-hand"></div>
+		  <div id="min-hand"></div>
+		  <div id="sec-hand"></div>
+		</div>
+	</body>
+</html>
