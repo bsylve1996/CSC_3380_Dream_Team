@@ -14,7 +14,7 @@ body.light_theme {
 
 #theme_btn{
   position:absolute;
-   top:10;
+   bottom:0;
    right:10;
    width: 75px;
    font:inherit;
@@ -28,6 +28,31 @@ body.light_theme {
 }
 .light_theme #change-theme-btn {
   color: #333;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #a068b1;
+}
+
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-align:center;
+}
+
+.topnav a:hover {
+  background-color: #d6af38;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #230741;
+  color: white;
 }
 
 
@@ -90,31 +115,7 @@ body.light_theme {
 	font-size: 25;
 
 }
-#b1{
-	    background-color:#ffdb58;	
-		border: none;
-		 left:20;
-		  cursor: pointer;
-}
 
-
-#b2{
-	    background-color:#ffdb58;	
-		border: none;
-		 cursor: pointer;
-}
-
-.light_theme #b1{
-background-color:#E0B0FF;	
-border: none;
-left:20;
- cursor: pointer;
-}
-.light_theme #b2{
-background-color:#E0B0FF;	
-border: none;
- cursor: pointer;
-}
 
 #calendar-container>div{
     padding: 0;
@@ -144,14 +145,6 @@ border: none;
   
 }
 
-
-#calendar-dates>table>tr>td:hover { 
-    background-color: black;
-}
-
-.light_theme #calendar-dates>table>tr>td:hover { 
-    background-color: white;
-}
 #bar{
 height:30;
 width:100;
