@@ -31,29 +31,58 @@ body.light_theme {
 }
 
 
+.topnav a {
+  float: left;
+  text-align: center;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-align:center;
+  padding-bottom: 20px;
+}
+
+.topnav a:hover {
+  background-color: #d6af38;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #230741;
+  color: white;
+}
+
+
 #calendar-container{
     padding: 10px;
-    width: 30%;
-    height: 35%px;
+    width: 500;
+    height: 450px;
+    position:absolute;
+    top:20%;
+    left:450px;
     text-align: center;
     border-radius: 10px;
     font-size: 16px;
     font-family: Arial;
     background-color:#151B54; /*image: linear-gradient(#151B54 , #800080);*/
-	margin:auto;
+	margin: 0 auto;
 	color:#0000;
+  display:  inline-block; 
 }
 .light_theme #calendar-container  {
   padding: 10px;
-    width: 30%;
-    height: 35%px;
+   width: 500;
+    height: 450px;
+     position:absolute;
+    top:20%;
+    left:450px;
     text-align: center;
     border: 2px solid #ADD8E6;
     border-radius: 10px;
     font-size: 16px;
     font-family: Arial;
     background-image: linear-gradient(#ADD8E6 , #3bb9ff);
-	margin:auto;
+	margin: 0 auto;
 	color:#0000;
 }
 	
@@ -62,7 +91,7 @@ body.light_theme {
     width: 160px;
     position: fixed;
     z-index: 1;
-    top: 55;
+    top: 100;
     left: 20;
 	background-color:#800080;
     overflow-x: hidden;
@@ -79,7 +108,7 @@ body.light_theme {
     width: 160px;
     position: fixed;
     z-index: 1;
-    top: 55;
+    top: 100;
     left: 20;
     background-color:#FFC0CB;
     overflow-x: hidden;
@@ -119,8 +148,7 @@ border: none;
 #calendar-container>div{
     padding: 0;
     margin-bottom: 10px;
-	
-	
+
 }
 
 
@@ -165,18 +193,17 @@ color: #ffdb58;
 height:30;
 width:100;
 background:#E0B0FF;
-margin:none;
+margin:0 none;
 color: #ffdb58;	
  cursor: pointer;
 	}
-	
-	
+		
 #bottombar{
     overflow: hidden;
     position: fixed;
-	left:480;
+	left:500;
     bottom: 150;
-    width: 40%;
+    width: 50%;
 	margin-left: auto;
     margin-right: auto;
 	color: #ffdb58;	
@@ -184,7 +211,3 @@ color: #ffdb58;
 }
 	
 	
-	
-	
-	
-

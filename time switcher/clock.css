@@ -1,6 +1,53 @@
 :root{
   --size: 200px;
 }
+body{
+  background-color:#230741;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #a068b1;
+  margin:0 auto;
+  max-width:  420px;
+  text-align:center;
+}
+
+.urmom{
+    text-align:center;
+    margin: 0 auto;
+}
+.catman{
+ background-color:#a068b1;
+ width:550;
+ height:350;
+ margin: 0 auto;
+ padding:20px;
+ margin-top:30px;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-align:center;
+  padding-bottom: 20px;
+  display:  inline-block; 
+}
+
+.topnav a:hover {
+  background-color: #d6af38;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #a068b1;
+  color: white;
+}
+
 
 #clock{
   width: var(--size);
@@ -10,6 +57,7 @@
   border-radius: 50%;
   box-shadow: 0 0 10px 0 black;
   position: relative;
+  margin: 0 auto;
 }
 
 #sec-hand {
