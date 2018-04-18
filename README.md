@@ -1,7 +1,13 @@
 # CSC_3380_Dream_Team
 
-Schedulr is an online calendar tool that allows end users to interact with a calendar and maintain a schedule. Users will be able to add and delete events from their calendar, view the calendars of their contacts, and make their calendar come to life with all new color priority system!
 
-This program should streamline planning, and make anyone who decides to use it well prepared for upcoming events, and life as well.
+This is a calendar that allows one to view the lunar calendar for any given month. It displays what the moon phase will be for each given day of a month.
 
-This system should be functional for all groups of people: managers and employees, students and professors, and anyone who needs a bit of organization in their lives.
+The program also allows for various preferences such as:
+Changing the first day of the week
+Moon angles
+Changing the time to 24 hour format 
+Changing time zones 
+and more...
+
+This lunar calendar implements the jquery calendar library as well as uses behaviors from Paul Carlisle's Complete Calendar Library. 

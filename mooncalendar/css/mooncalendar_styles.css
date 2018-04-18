@@ -653,10 +653,6 @@ p.svgWarning {
   .hideable {
     display: none; }
 
-  /* We have to use visibility:hidden here to hide tooltips
-     when printing (Chrome mobile) because of the way JQUI
-     structures them; display:none won't work.
-  */
   .ui-tooltip {
     visibility: hidden;
     display: none; }

@@ -4,9 +4,8 @@
    <head>
       <meta charset="utf-8" />
       
-      <link rel="stylesheet" type="text/css" href="../styles/pc.css">
+      <link rel="stylesheet" type="text/css" href="styles/pc.css">
       <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-      <script type="text/javascript" src = "../js/pc_scripts.js"></script>
       
       <title>
          moon calendar
@@ -15,11 +14,10 @@
          <link href="css/themes/jquery-ui.min.css" rel="stylesheet" />
    <link href="css/mooncalendar_styles.css" rel="stylesheet" />
 
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
-   <script>window.jQuery || document.write('<script src="scripts/jquery/jquery-2.1.1.min.js">\x3C/script>')</script>
-   
-   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js" type="text/javascript"></script>
-   <script>window.jQuery.ui || document.write('<script src="scripts/jquery/jquery-ui.min.js">\x3C/script>')</script>
+   <script src="scripts/jquery/jquery-2.1.1.min.js">\x3C/script>')</script>
+
+
+   <script src="jquery-ui.min.js">\x3C/script>')</script>
    
    <script src="scripts/jquery/jquery.cookie.js" type="text/javascript"></script>
    
@@ -36,27 +34,73 @@
    <script src="scripts/pmc_utils.js" type="text/javascript"></script>
 
    <script>
+      function addLoadEvent(func)
+      {
+         var oldonload = window.onload;
+         if (typeof window.onload != 'function')
+         {
+           window.onload = func;
+         }
+         else
+         {
+           window.onload = function()
+           {
+             if (oldonload)
+             {
+               oldonload();
+             }
+             func();
+           }
+         }
+      }
+
+      addLoadEvent(function()
+      {
+         var hasSVG = !!(document.createElementNS &&
+                         document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
+
+         var svgWarning = document.getElementById("svgWarning");
+         var mooncalendar = document.getElementById("mooncalendar");
+
+         if (hasSVG === false)
+         {
+           // svgWarning.setAttribute("style", "display:block;");
+            mooncalendar.setAttribute("style", "display:none;");
+         }
+         else
+         {
+           // svgWarning.setAttribute("style", "display:none;");
+            mooncalendar.setAttribute("style", "display:table;");
+         }
+      });
+   </script>
+
+   <script>
       $(document).ready(function()
       {
       
                       
          var mooncalendar = document.getElementById("mooncalendar");
+         var svgWarning = document.getElementById("svgWarning");
+
+         
+         var hasSVG = !!(document.createElementNS &&
+                         document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
          
          if (hasSVG === false)
          {
-            svgWarning.setAttribute("style", "display:block;");
+
             mooncalendar.setAttribute("style", "display:none;");
          }
-         else
+
          {
   
             window.preferences.loadPreferences();
             window.preferences.savePreferences();
             
-            svgWarning.setAttribute("style", "display:none;");
             mooncalendar.setAttribute("style", "display:table;");
                         
-            var basewidth = pmc_utils.getBaseWidth();
+            var basewidth = pmc_utils.getBaseWidth(); 
             
             if (basewidth === 6.0)
             {
@@ -88,15 +132,14 @@
             
             $(function()
             {
-               var resetButton = $("#resetButton").text("").append("<img src=css/themes/images/reset.png />").button();
+               var resetButton = $("#resetButton").text("").append("<img src=images/reset.png />").button();
                resetButton.click(function() {pmc_utils.setToCurrentDate();});
 
 
-               var settingsButton = $("#settingsButton").text("").append("<img src=css/themes/images/gear.png />").button();
+               var settingsButton = $("#settingsButton").text("").append("<img src=images/gear.png />").button();
                settingsButton.click(function() {preferencesDialog.dialog("open"); });
 
                $("#prefs_tooltips").button().click(pmc_utils.getCheckboxHandler($("#prefs_tooltips"), "tooltips"));
-               // $("#prefs_northUp").button().click(pmc_utils.getCheckboxHandler($("#prefs_northUp"), "northUp"));
                $("#prefs_northUp").button().click(pmc_utils.getToggleButtonHandler2($("#prefs_northUp"), "northUp"));
                $("#prefs_positionAngle").button().click(pmc_utils.getCheckboxHandler($("#prefs_positionAngle"), "positionAngle"));
                
@@ -174,9 +217,6 @@
             google_ad_height = 90;
             //-->
          </script>
-         <script type="text/javascript"
-            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-         </script>
       </div>
       
       <div class="pc_header_top hideable">
@@ -184,7 +224,7 @@
       </div>
      
       <div class="pc_line hideable">
-         <img src="../images/1x1.png" alt="separator line image" style="height:4px; width:100%; display:block;">
+         <img src="images/1x1.png" alt="separator line image" style="height:4px; width:100%; display:block;">
       </div>
       
       
@@ -203,7 +243,7 @@
          </noscript>
          <script type="text/javascript">
          <!--
-            getLinks();
+            //getLinks();
          -->
          </script>
       </div>
@@ -355,13 +395,11 @@
       <div class="prefs_buttons">
          <input type="checkbox" id="prefs_tooltips" /><label for="prefs_tooltips">Tooltips</label>
          <input type="checkbox" id="prefs_legend" /><label for="prefs_legend">Legend</label>
-         <!-- <input type="checkbox" id="prefs_northUp" /><label for="prefs_northUp">North Up</label> -->
          <input type="checkbox" id="prefs_positionAngle" /><label for="prefs_positionAngle">Position Angle</label>
       </div>   
       
       <div class="prefs_buttons">
-         <!-- <input type="checkbox" id="prefs_legend" /><label for="prefs_legend">Legend</label> -->
-         <!-- <input type="checkbox" id="prefs_northUp" /><label for="prefs_northUp">North Up</label> -->
+
          <button id="prefs_northUp">North Up</button>
          <button id="prefs_timeFormat">6 Hour Format</button>
       </div>
@@ -403,51 +441,6 @@
    </form>
    
    </div>
-   
-   <!--<![endif]-->
-   
-   <script>
-      function addLoadEvent(func)
-      {
-         var oldonload = window.onload;
-         if (typeof window.onload != 'function')
-         {
-           window.onload = func;
-         }
-         else
-         {
-           window.onload = function()
-           {
-             if (oldonload)
-             {
-               oldonload();
-             }
-             func();
-           }
-         }
-      }
-
-      addLoadEvent(function()
-      {
-         var hasSVG = !!(document.createElementNS &&
-                         document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
-
-         var svgWarning = document.getElementById("svgWarning");
-         var mooncalendar = document.getElementById("mooncalendar");
-
-         if (hasSVG === false)
-         {
-            svgWarning.setAttribute("style", "display:block;");
-            mooncalendar.setAttribute("style", "display:none;");
-         }
-         else
-         {
-            svgWarning.setAttribute("style", "display:none;");
-            mooncalendar.setAttribute("style", "display:table;");
-         }
-      });
-   </script>
-
    
    
    <br /> <br />
