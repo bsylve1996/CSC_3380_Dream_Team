@@ -1,3 +1,12 @@
+document.getElementById('theme_btn').addEventListener('click', function () {
+    let darkThemeEnabled = document.body.classList.toggle('light_theme');
+    localStorage.setItem('light_theme-enabled', darkThemeEnabled);
+});
+
+if (JSON.parse(localStorage.getItem('light_theme-enabled'))) {
+    document.body.classList.add('light_theme');
+}
+
 window.onload = function(){
     var d = new Date();
     var month_name = ['January','February','March','April','May','June','July','August','September','October','November','December'];
