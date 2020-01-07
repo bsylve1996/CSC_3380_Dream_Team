@@ -1,0 +1,692 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Helvetica, sans-serif; }
+
+body {
+  background: #e5e5e5;
+  color: black; }
+
+p {
+  margin-bottom: 1.5em;
+  margin-left: 50pt;
+  margin-right: 50pt;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10pt; }
+
+h1 {
+  margin-bottom: 1.0em;
+  margin-left: 40pt;
+  margin-right: 50pt;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14pt; }
+
+hr {
+  background: black;
+  border: 0;
+  height: 1px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%; }
+
+ul.info {
+  margin-bottom: 1.5em;
+  margin-left: 50pt;
+  margin-right: 50pt;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10pt; }
+
+ul.info li {
+  margin-left: 30pt;
+  margin-right: 30pt;
+  margin-bottom: 1.2em; }
+
+select {
+  font-size: 10pt;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 100%;
+  z-index: 9999; }
+
+.preamble {
+  text-align: left;
+  color: #68685b;
+  background-color: #909080;
+  display: table;
+  border: solid thin;
+  padding: 10px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 0px; }
+
+.preamble p {
+  margin: 1em;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #e5e5e5; }
+
+.preamble A:link {
+  text-decoration: none;
+  color: #bfbfbf; }
+
+.preamble A:visited {
+  text-decoration: none;
+  color: #bfbfbf; }
+
+.preamble A:active {
+  text-decoration: underline;
+  color: #bfbfbf; }
+
+.preamble A:hover {
+  text-decoration: underline;
+  color: #bfbfbf; }
+
+#instructions, #references, #credits {
+  margin-left: 2em;
+  margin-right: 2em; }
+
+#instructions li {
+  padding-top: 0.4em; }
+
+.inline-img {
+  display: inline-block;
+  background-color: #969696;
+  padding: 3px; }
+
+.inline-img img {
+  vertical-align: middle; }
+
+.prefs_buttons {
+  padding-top: 0.4em; }
+
+label.prefs_firstDayOfWeek {
+  display: block;
+  font-size: 8pt;
+  margin: 10pt 3pt 3pt 3pt; }
+
+label.prefs_language {
+  display: block;
+  font-size: 8pt;
+  margin: 10pt 3pt 3pt 3pt; }
+
+label.prefs_scaling {
+  display: block;
+  font-size: 8pt;
+  margin: 10pt 3pt 3pt 3pt; }
+
+label.prefs_phaseTime {
+  display: block;
+  font-size: 8pt;
+  margin: 10pt 3pt 3pt 3pt; }
+
+label.prefs_gregorianJD1 {
+  display: block;
+  float: left;
+  font-size: 8pt;
+  margin: 10pt 3pt 3pt 3pt; }
+
+.wrapper {
+  display: inline-block; }
+
+input#prefs_gregorianJD1 {
+  display: block;
+  float: left;
+  clear: both;
+  width: auto;
+  padding: 10px;
+  border: solid 1px black; }
+
+/* Hack to make JQUI dropdowns visible when they exceed the
+   height of an enclosing dialog. */
+.ui-dialog, .ui-dialog-content {
+  overflow: visible; }
+
+.ui-button .ui-icon.ui-icon-blank {
+  background-image: url("themes/images/blank.png"); }
+
+/* Items related to the SVG calendar.
+*/
+.centered {
+  margin-left: auto;
+  margin-right: auto; }
+
+.active .dateBackground {
+  /*fill: rgb(125,125,125);*/
+  fill: #969696; }
+
+/* Perhaps want to shift 'canonical' to be a member of
+   'active', which may be better when we're updating
+   this status on the fly.
+*/
+.active.canonical .dateBackground {
+  /*fill: rgb(125,125,125); */
+  fill: #969696;
+  /*fill: adjust-color($daycell-background-active, $blue: +20%);*/ }
+
+.inactive .dateBackground {
+  /*fill: rgb(200,200,200);*/
+  fill: #d2d2d2; }
+
+.inactive.canonical .dateBackground {
+  /*fill: rgb(200,200,200); */
+  fill: #d2d2d2;
+  /*fill: adjust-color($daycell-background-inactive, $blue: +20%);*/ }
+
+.active .dateLabel {
+  font-family: sans-serif;
+  font-style: normal;
+  text-anchor: end;
+  /*fill: rgb(25,25,25);*/
+  fill: #191919;
+  stroke: none; }
+
+.inactive .dateLabel {
+  font-family: sans-serif;
+  font-style: italic;
+  text-anchor: end;
+  /*fill: rgb(100,100,100);*/
+  fill: #646464;
+  stroke: none; }
+
+.circleGroup {
+  /*stroke: black; */
+  stroke-width: 0.015; }
+
+.active .darkBackground .circleBack {
+  fill: black;
+  stroke: black; }
+
+.active .lightBackground .circleBack {
+  fill: white;
+  stroke: black; }
+
+.inactive .darkBackground .circleBack {
+  fill: #969696;
+  stroke: #969696; }
+
+.inactive .lightBackground .circleBack {
+  fill: white;
+  stroke: #969696; }
+
+.active .darkBackground .circleFront {
+  fill: black;
+  stroke: none; }
+
+.active .lightBackground .circleFront {
+  fill: white;
+  stroke: none; }
+
+.inactive .darkBackground .circleFront {
+  fill: #969696;
+  stroke: none; }
+
+.inactive .lightBackground .circleFront {
+  fill: white;
+  stroke: none; }
+
+.active .darkBackground .leftArc {
+  fill: white;
+  stroke: none; }
+
+.active .lightBackground .leftArc {
+  fill: black;
+  stroke: black; }
+
+.inactive .darkBackground .leftArc {
+  fill: white;
+  stroke: none; }
+
+.inactive .lightBackground .leftArc {
+  fill: #969696;
+  stroke: #969696; }
+
+.active .darkBackground .rightArc {
+  fill: white;
+  stroke: none; }
+
+.active.blue .darkBackground .rightArc {
+  fill: #b9ffff;
+  stroke: none; }
+
+.active .lightBackground .rightArc {
+  fill: black;
+  stroke: none; }
+
+.inactive .darkBackground .rightArc {
+  fill: white;
+  stroke: none; }
+
+.inactive .lightBackground .rightArc {
+  fill: #969696;
+  stroke: none; }
+
+.blue .circleFront {
+  fill: blue; }
+
+.legend1 {
+  visibility: hidden;
+  stroke: none; }
+
+.legend2 {
+  visibility: hidden;
+  stroke: none; }
+
+#svg_calendar_legend {
+  stroke-width: 0.5;
+  stroke: #4d4d4d; }
+
+.legend_text {
+  stroke: none;
+  font-size: 8pt;
+  fill: #4d4d4d; }
+
+#calendar_type {
+  font-style: italic;
+  text-anchor: end;
+  overflow: hidden;
+  fill: #4d4d4d; }
+
+#new_phase1 {
+  fill: #4d4d4d;
+  visibility: visible; }
+
+#new_phase2 {
+  visibility: hidden; }
+
+#q1_phase1 {
+  fill: white;
+  visibility: visible; }
+
+#q1_phase2 {
+  fill: #4d4d4d;
+  visibility: visible; }
+
+#full_phase1 {
+  fill: white;
+  visibility: visible; }
+
+#full_phase2 {
+  visibility: hidden; }
+
+#q2_phase1 {
+  fill: white;
+  visibility: visible; }
+
+#q2_phase2 {
+  fill: #4d4d4d;
+  visibility: visible; }
+
+/*******************************************************/
+.active.canonical .legend1 {
+  fill: #d9d9d9;
+  visibility: visible; }
+
+.inactive.canonical .legend1 {
+  fill: white;
+  visibility: visible; }
+
+.active.canonical .legend2 {
+  fill: #4d4d4d;
+  visibility: visible; }
+
+.inactive.canonical .legend2 {
+  fill: #b0b0b0;
+  visibility: visible; }
+
+.active.canonical.new .legend1 {
+  fill: #4d4d4d;
+  visibility: visible; }
+
+.inactive.canonical.new .legend1 {
+  fill: #b0b0b0;
+  visibility: visible; }
+
+.active.canonical.new .legend2 {
+  visibility: hidden; }
+
+.inactive.canonical.new .legend2 {
+  visibility: hidden; }
+
+.active.canonical.full .legend1 {
+  fill: #d9d9d9;
+  /*fill: white;*/
+  visibility: visible; }
+
+.inactive.canonical.full .legend1 {
+  fill: #e6e6e6;
+  /*fill: white;*/
+  visibility: visible; }
+
+.canonical.full .legend2 {
+  visibility: hidden; }
+
+/*******************************************************/
+.wkdayBackground {
+  /*fill:rgb(255, 255, 255);*/
+  fill: #e5e5e5;
+  stroke: none; }
+
+.weekday {
+  font-family: sans-serif;
+  font-weight: bold;
+  stroke: none;
+  text-anchor: middle; }
+
+#svg_calendar {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: block; }
+
+#weekday_bar {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  fill: black;
+  stroke-width: 1px;
+  stroke: red; }
+
+#calendar_grid {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  fill: #ffc8ff;
+  stroke-width: 0.5;
+  /* We give the day cells a very narrow stroke. This just cleans up
+     the strange apparent gap-width variations caused by aliasing, since
+     the rendering engine now has an actual, explicit line to work with.
+     Should be careful to set this to the background color of the page,
+     however.
+  */
+  /*stroke: white;*/
+  stroke: #e5e5e5; }
+
+#calendar_legend {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  fill: #ffc8ff;
+  stroke-width: 0.5;
+  /* We give the day cells a very narrow stroke. This just cleans up
+     the strange apparent gap-width variations caused by aliasing, since
+     the rendering engine now has an actual, explicit line to work with.
+     Should be careful to set this to the background color of the page,
+     however.
+  */
+  /*stroke: white;*/
+  /*stroke: $page-background;*/
+  stroke: black; }
+
+#buttonPanel {
+  vertical-align: top;
+  padding-top: 30%; }
+
+#panelStrip {
+  width: 30px; }
+
+#resetButton {
+  border-top: 40px;
+  background: #999999; }
+
+#resetButton:hover {
+  border-top: 40px;
+  background: #8c8c8c; }
+
+#settingsButton {
+  margin-top: 5px;
+  background: #999999;
+  /* Hide the settings button for now, since it doesn't do anything yet.
+  */
+  /*display: none;*/ }
+
+#settingsButton:hover {
+  margin-top: 5px;
+  background: #8c8c8c; }
+
+/* Items related to the date selector and other divs related to
+   the calendar.
+*/
+.mcds {
+  margin: 0;
+  padding: 0;
+  cursor: default; }
+
+.mcds #monthVal, #milleniumVal, #centuryVal, #decadeVal, #yearVal, #epochVal {
+  display: none; }
+
+.mcds li {
+  float: left;
+  list-style: none;
+  font: bold 24pt sans-serif; }
+
+/* Main display settings */
+.mcds li div {
+  display: block;
+  background: #999999;
+  padding: 5px 12px;
+  text-decoration: none;
+  text-align: left;
+  border-right: 1px solid #e5e5e5;
+  width: auto;
+  color: black;
+  white-space: nowrap; }
+
+.mcds li div#month {
+  border-right: 20px solid #e5e5e5; }
+
+.mcds li div#year {
+  border-right: 20px solid #e5e5e5; }
+
+/* Main display: hover */
+.mcds li div:hover {
+  /*background: #999999;*/
+  background: #8c8c8c; }
+
+.mcds li ul {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  visibility: hidden;
+  border: 1px solid #e5e5e5; }
+
+.mcds li ul li {
+  float: none;
+  display: inline; }
+
+/* Dropdown settings */
+.mcds li ul li div {
+  width: auto;
+  /*background: #999999;*/
+  background: #999999;
+  border: 1px solid #999999;
+  font-size: 12pt; }
+
+/* Dropdown settings: hover */
+.mcds li ul li div:hover {
+  /*background: #888888;*/
+  background: #8c8c8c; }
+
+.mcds li ul li .val {
+  display: none; }
+
+#DateDisplay {
+  margin-left: auto;
+  margin-right: auto;
+  display: none; }
+
+#DateSelector {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  display: table; }
+
+#Outline {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: table;
+  border: solid 1px transparent;
+  padding-top: 12px;
+  padding-bottom: 0px;
+  padding-left: 35px;
+  padding-right: 35px; }
+
+#Caption {
+  float: right;
+  position: relative;
+  top: 18px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+#Calendar {
+  padding: 0px;
+  margin: 0px;
+  border: 0px; }
+
+/* Use border to mimic solid background, which IE
+   eliminates. Have to fiddle with these numbers
+   to get everything to line up correctly, which
+   is a drawback. User can change printing settings,
+   but no one is going to do that.
+*/
+#MessageBackground {
+  float: right;
+  position: relative;
+  /*top: 25px;*/
+  top: -36px;
+  left: -35px;
+  width: 65px;
+  height: 0px;
+  display: none;
+  border: 15px solid white;
+  border-style: solid;
+  border-color: white;
+  border-left-width: 15px;
+  border-right-width: 15px;
+  border-top-width: 18px;
+  border-bottom-width: 18px; }
+
+/* Note: Chrome renders this font horribly on both Linux and Windows,
+   with horrible kerning and the entire string shifted slightly off-
+   center to the right. May be best to just detect Chrome and hide
+   this altogether to avoid this rendering defect, which seems too
+   be insoluble.
+*/
+#Message {
+  position: relative;
+  font-size: 8pt;
+  top: -5pt;
+  left: -2pt;
+  text-align: center;
+  background: transparent;
+  display: block;
+  /* For some reason, no color setting of gray, or near-gray,
+     is honored by Firefox; text renders black. Test in other
+     browsers, and just give up for now.
+  color: #AAA; */
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 #aaaaaa; }
+
+.ui-button .ui-icon.my_custom_icon {
+  background-image: url(themes/images/reset.png) !important; }
+
+.ui-tooltip {
+  font-size: 10pt;
+  max-width: 500px; }
+
+p.svgWarning {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  text-align: left;
+  color: #AA0000;
+  display: none;
+  /* Try setting this to 'none' by default, to eliminate sporadic appearance when reloading page. */
+  border: solid 3px #aa0000;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 60%;
+  font-weight: bold;
+  font-size: 14pt;
+  line-height: 140%; }
+
+.svgWarning a:visited,
+.svgWarning a:hover,
+.svgWarning a:link {
+  color: #770000; }
+
+@media print {
+  /* Hide all elements belonging to Jquery UI from printing. */
+  [class|="ui"] {
+    visibility: hidden;
+    overflow: hidden !important;
+    display: none !important; }
+
+  *[class|="prefs"] {
+    visibility: hidden;
+    display: none; }
+
+  *[id|="prefs"] {
+    visibility: hidden;
+    display: none; }
+
+  select {
+    visibility: hidden;
+    display: none; }
+
+  label {
+    visibility: hidden;
+    display: none; }
+
+  .hideable {
+    display: none; }
+
+  /* We have to use visibility:hidden here to hide tooltips
+     when printing (Chrome mobile) because of the way JQUI
+     structures them; display:none won't work.
+  */
+  .ui-tooltip {
+    visibility: hidden;
+    display: none; }
+
+  body {
+    background: white; }
+
+  #calendar_grid {
+    stroke-width: 0.5;
+    stroke: white; }
+
+  #MessageBackground {
+    display: inline; }
+
+  #Outline {
+    border: solid 1pt #aaaaaa; }
+
+  #DateSelector {
+    display: none; }
+
+  #DateDisplay {
+    display: table;
+    font-weight: bold;
+    font-size: 30pt;
+    margin-bottom: 4pt; }
+
+  .wkdayBackground {
+    fill: white; } }
+
+@media print and (-webkit-min-device-pixel-ratio: 0) {
+  #Message {
+    color: #AAA;
+    text-shadow: none; } }
